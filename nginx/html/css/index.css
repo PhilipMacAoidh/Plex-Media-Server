@@ -1,0 +1,57 @@
+#quoteDisplay {
+    position: relative;
+    display: inline-block;
+    top: -50%;
+    margin-top: 100px;
+    width: 50%;
+    font-size: 18px;
+    }
+
+#helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    }
+
+img {
+    width: 50%;
+    vertical-align: middle;
+    }
+
+@media only screen and (min-width: 768px) {
+    #help-text {
+            display: block;
+            position: absolute;
+            float: left;
+            margin-left: 20px;
+            color: #040096;
+        }
+    #help-button {
+            display: none;
+        }
+    }
+@media only screen and (max-width: 767px) {
+    #help-button {
+        position: absolute;
+        right: 20px;
+        margin-top: 10px;
+        background: #1d75be;
+        border: 4px solid #0b4a82;
+        border-radius: 11px;
+        padding: 8px 14px;
+        color: #ffffff;
+        display: inline-block;
+        font: normal 700 12px/1 "Calibri", sans-serif;
+        text-align: center;
+        text-shadow: 1px 1px #000000;
+        }
+    #help-text {
+            display: none;
+        }
+    #quoteDisplay {
+        width: 80%;
+    }
+    img {
+        width: 80%;
+    }
+    }

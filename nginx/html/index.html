@@ -1,0 +1,65 @@
+<html>
+
+<head>
+  <title>Netphilix</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Netphilix Title Page">
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"></script> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/index.css">
+
+  <style type="text/css">
+    body {
+    background-color: black;
+    overflow: hidden;
+    }
+
+    #splashscreen {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: url("imgs/netphilix-background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+  </style>
+
+   <script type="text/javascript">
+    $(window).load(function () {
+      $(document).ready(function () {
+        $('#splashscreen').fadeIn(1000);
+        setTimeout(function () {$('#splashscreen').fadeOut(1000)}, 7000);
+        setTimeout(function () {window.location="http://netphilix.ie/plex"}, 8000);
+        setTimeout(function () {window.location="http://netphilix.ie/plex"}, 8500);
+      });
+    });
+
+    document.onkeyup = function(e) {
+      if(e.keyCode == 72) {
+        window.location="http://netphilix.ie/help"
+      }
+    }
+  </script>
+
+  <script  src="js/splashpage.js"></script>
+
+</head>
+
+<body>
+  <div id="splashscreen">
+    <a href="/help"><p id="help-text">Press 'H' for help</p><button id="help-button">FAQ's</button></a>
+    <span id="helper"></span>
+    <img src="imgs/netphilix-foreground.png" id="title">
+    <p id="quoteDisplay"></p>
+  </div>
+</body>
+
+</html>

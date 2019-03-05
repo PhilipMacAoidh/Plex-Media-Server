@@ -1,0 +1,153 @@
+<html>
+<head>
+    <title>About Netphilix</title>
+    <meta name="description" content="About Netphilix">
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            background: url("imgs/star-bg.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        /* Set the animation, color, size and hide the text */
+        .intro {
+            width: 620px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -310px;
+            margin-top: -55px;
+            z-index: 1;
+            animation: intro 6s ease-out 1s;
+            color: rgb(75, 213, 238);
+            font-weight: 400;
+            font-size: 300%;
+            opacity: 0;
+        }
+
+        @keyframes intro {
+            0% {
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Set the animation & hide the logo */
+        .logo {    
+            position: absolute;
+            width: 800px;
+            top: 50%;
+            left: 50%;
+            margin-top: -74px;
+            margin-left: -400px;
+            z-index: 1;
+            animation: logo 9s ease-out 9s;
+            opacity: 0;
+        }
+
+        /* Scale the logo down and maintain it centered */
+        @keyframes logo {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;     
+            }
+            100% {
+                opacity: 1;
+                transform: scale(0.01);
+            }
+        }
+
+        p {
+        color: #FFFF82;
+        }
+
+        /* Set the font, lean the board, position it */
+        #board {
+        font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+        transform: perspective(500px) rotateX(25deg);
+        transform-origin: 50% 100%;
+        text-align: justify;
+        position: absolute;
+        margin-left: -9em;
+        font-weight: bold;
+        overflow: hidden;
+        font-size: 350%;
+        height: 50em;
+        width: 18em;
+        bottom: 0;
+        left: 50%;
+        }
+
+        #board:after {    
+        position: absolute;
+        content: ' ';
+        bottom: 60%;
+        left: 0;
+        right: 0;
+        top: 0;
+        }
+
+        /* Set the scrolling animation and position it */
+        #content {
+        animation: scroll 100s linear 16s;
+        position: absolute;
+        top: 100%;
+        }
+
+        #title, #subtitle {
+        text-align: center;
+        }
+
+        @keyframes scroll {
+            0% {
+                top: 100%;
+            }
+            100% {
+                top: -170%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio preload="auto" autoplay>
+        <source src="audio/Star_Wars_original_opening_crawl_1977.mp3" type="audio/mpeg">
+    </audio>
+
+    <section class="intro">
+        A long time ago, in a galaxy far, far away....
+    </section>
+
+    <img src="imgs/starwars.png" class="logo">
+    
+    <!-- Change the text to your liking -->
+    <div id="board">  
+    <div id="content">
+        <p id="title">Netphilix</p>
+        <p id="subtitle">HOW DOES IT WORK</p>
+        <br>
+        <!-- And make it cheesy ! -->
+        <p>Well... It's based on an application called 'Plex Media Server', that's what I use to display everything nicely including the posters, cast, trailers. All of that is done with Plex. I then use 2 different applications to keep the TVShows and Movies downloaded and up to date. They're called Sonarr (TV) and Radarr (Movies). </p>
+        <p>Sonarr creates a release calendar for itself so that it can search torrent sites (more on that later) for new episodes of TV Shows that I want to keep updated. Sonarr can also download past episodes that I missed, but it's not reliable in any capacity. Sonarr can also download the video quality of your choice. I have it set to download 720p videos but if none can be found in that quality it'll download them in 1080p, if they're available. Once it finds the episode it sends the link to BitTorrent and then downloads and organises it into the correct show and season folders, and renames the file so Plex can find the file and understand what episode it is. </p>
+        <p>Radarr allows me to request movies. It'll wait until the movies been digitally released to start searching the torrent sites. Just like Sonarr, Radarr can download movies in my selected quality, I have it set to search for 1080p videos but if they're unavailable then it'll search for 720p. It can download movies that have been previously released, but it can be very hit and miss depending on how popular the movies is and how long ago it was released. Once it finds the movie, it sends it onto BitTorrent, downloads it, renames it, and organises it into the correct folder for Plex. </p>
+        <p>I use another application called Jackett. Sonarr and Radarr have some torrent sites that they can search but it's not reliable or maintained. Jackett can search ALL the sites. They just need to be configured and off you pop. </p>
+        <p>The website is run off a NGINX server. This basically sees that someone wishes to connect to the server and depending on the url (e.g. /help, /about, /plex ...) it will route the user to the correct page. </p>
+        <p>I run all of this on a €110 PC that I bought on Adverts.ie, that I then upgraded with a 500GB SSD, 3TB HDD, and an external 8TB HDD.</p>        
+    </div>  
+    </div>              
+</body>
+</html>
